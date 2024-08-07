@@ -1,8 +1,8 @@
-Streamlit==1.37.1
-streamlit_option_menu
-seaborn==0.13.2
-pandas==2.2.2
-Plotly==2.34.0
-base64
-PIL
-pymongo
+seaborn==0.12.2
+matplotlib==3.7.1
+pandas==2.0.3
+pymongo==5.2.0
+streamlit==1.24.0
+plotly==5.15.0
+streamlit-option-menu==0.3.0
+Pillow==10.0.0
