@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 from streamlit_option_menu import option_menu
+import requests
 import base64
 
 # Setting up page configuration
@@ -26,23 +27,31 @@ if 'df' not in st.session_state:
 if selected == "Home":
     st.markdown("<h1 style='text-align: center; color: #FF5A5F;'>AIRBNB ANALYSIS</h1>", unsafe_allow_html=True)
     
-    with open('https://github.com/YABASEIMMANUEL/Yab-airbnb-analysis/blob/main/aribnb.gif', 'rb') as f:
-        image_base64 = base64.b64encode(f.read()).decode()
-
-    st.markdown(
-        f"""
-        <style>
-        .centered-img {{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%; /* Adjust width as needed */
-        }}
-        </style>
-        <img src="data:image/gif;base64,{image_base64}" class="centered-img">
-        """,
-        unsafe_allow_html=True
-    )
+    # Replace with your raw content URL
+    image_url = "https://github.com/YABASEIMMANUEL/Yab-airbnb-analysis/blob/main/aribnb.gif"
+    
+    try:
+        response = requests.get(image_url)
+        response.raise_for_status()
+        image_base64 = base64.b64encode(response.content).decode()
+        
+        st.markdown(
+            f"""
+            <style>
+            .centered-img {{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%; /* Adjust width as needed */
+            }}
+            </style>
+            <img src="data:image/gif;base64,{image_base64}" class="centered-img">
+            """,
+            unsafe_allow_html=True
+        )
+    except requests.exceptions.RequestException as e:
+        st.error(f"Error fetching image: {e}")
+    
     st.markdown("## :blue[Domain] : Travel Industry, Property Management, and Tourism")
     st.markdown("## :blue[Overview] : In this project, the focus is on analyzing Airbnb data to uncover valuable insights related to pricing, availability, and location trends. Using MongoDB Atlas, the data is meticulously cleaned and prepared to ensure accuracy and consistency. Interactive visualizations and dynamic plots are then developed to provide a clear view of various patterns and trends, such as fluctuations in pricing, seasonal availability, and geographic distribution of properties. This approach aims to deliver actionable insights that can help stakeholders make informed decisions in the travel and property management sectors.")
     st.markdown("## :blue[Technologies used] : The analysis leverages a combination of Python for data manipulation, Pandas for data cleaning and analysis, Plotly for creating interactive and visually appealing charts, Streamlit for developing user-friendly web applications, and MongoDB for efficient data storage and retrieval.")
