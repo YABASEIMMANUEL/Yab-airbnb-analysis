@@ -26,7 +26,7 @@ if 'df' not in st.session_state:
 if selected == "Home":
     st.markdown("<h1 style='text-align: center; color: #FF5A5F;'>AIRBNB ANALYSIS</h1>", unsafe_allow_html=True)
     
-    with open('aribnb.gif', 'rb') as f:
+    with open('https://github.com/YABASEIMMANUEL/Yab-airbnb-analysis/blob/main/aribnb.gif', 'rb') as f:
         image_base64 = base64.b64encode(f.read()).decode()
 
     st.markdown(
