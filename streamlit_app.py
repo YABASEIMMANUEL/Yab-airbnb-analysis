@@ -28,7 +28,7 @@ if selected == "Home":
     st.markdown("<h1 style='text-align: center; color: #FF5A5F;'>AIRBNB ANALYSIS</h1>", unsafe_allow_html=True)
     
     # Replace with your raw content URL
-    image_url = "https://github.com/YABASEIMMANUEL/Yab-airbnb-analysis/blob/main/aribnb.gif"
+    image_url = "https://raw.githubusercontent.com/YABASEIMMANUEL/Yab-airbnb-analysis/main/aribnb.gif"
     
     try:
         response = requests.get(image_url)
