@@ -1,9 +1,8 @@
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pandas as pd
-import pymongo
-import streamlit as st
-import plotly.express as px
-from streamlit_option_menu import option_menu
-from PIL import Image
-import base64
+Streamlit==1.37.1
+streamlit_option_menu
+seaborn==0.13.2
+pandas==2.2.2
+Plotly==2.34.0
+base64
+PIL
+pymongo
